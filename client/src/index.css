@@ -1,16 +1,39 @@
+:root {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  --game-container: rgba(221, 225, 65, 100);
+  --board-background: rgba(221, 225, 65, 100);
+  color: aliceblue;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  text-align: center;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+* {
+  width: 100%;
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
 }
-
+button {
+  border: 0.05em solid black;
+  border-radius: 0.5em;
+}
 ol,
 ul {
-  padding-left: 30px;
 }
 
 .board-row:after {
@@ -20,21 +43,15 @@ ul {
 }
 
 .status {
-  margin-bottom: 10px;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
+  background: var(--board-background);
+  border: 0.1em solid rgba(241, 241, 232, 100);
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
+
   height: 20vh;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
   width: 20vh;
 }
 
@@ -50,7 +67,17 @@ ul {
   display: flex;
   flex-direction: row;
 }
-
+ol,
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+}
 .game-info {
-  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
 }
