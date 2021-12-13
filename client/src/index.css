@@ -4,7 +4,6 @@
   -moz-box-sizing: border-box;
   --game-container: rgba(221, 225, 65, 100);
   --board-background: rgba(221, 225, 65, 100);
-  color: aliceblue;
   font: 14px "Century Gothic", Futura, sans-serif;
   text-align: center;
   line-height: 1.4;
@@ -19,21 +18,37 @@
 }
 * {
   width: 100%;
+  transition-duration: 0.7s;
 }
-
+h1 {
+  border: solid 0.2em black;
+  border-radius: 100% 50%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+h1:hover {
+  border-radius: 50% 100%;
+}
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
+  margin: 0;
 }
 button {
   border: 0.05em solid black;
   border-radius: 0.5em;
 }
-ol,
-ul {
+ol {
+  border: solid 0.3em black;
+  border-radius: 50% 100%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+ol:hover {
+  border-radius: 100% 50%;
 }
 
 .board-row:after {
@@ -73,11 +88,40 @@ li {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0;
+}
+li {
+  padding: 0.2em 0em;
+  width: 50%;
 }
 .game-info {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
+  border: solid 0.5em black;
+  border-radius: 100% 50%;
+}
+.game-info:hover {
+  border-radius: 50% 100%;
+  transition: 0.7s;
+}
+li:nth-last-child(1) {
+  border: 0.5em solid rgba(243, 97, 12, 100);
+  background-color: aliceblue;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+}
+li:nth-last-child(1):hover {
+  background-color: rgba(243, 97, 12, 100);
+}
+button {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+button:hover {
+  background-color: rgba(243, 97, 12, 100);
+  transition: 0.7s;
 }
