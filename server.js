@@ -25,7 +25,7 @@ io.on("connection", (socket) => {
 
 const getApiAndEmit = (socket) => {
   const response = new Date();
-  // Emitting a new message. Will be consumed by the client
   socket.emit("FromAPI", response);
 };
 server.listen(port, () => console.log(`Listening on port ${port}`));
+//Need to add proxy for Cors error
