@@ -139,6 +139,10 @@ class App extends React.Component {
       <>
         <Game />
         <h1>{this.state.data}</h1>
+        <ul id="messages"></ul>
+        <form id="form" action=""></form>
+        <input id="input" autocomplete="off"></input>
+        <button>Send</button>
       </>
     );
   }
