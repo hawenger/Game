@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Run
+
+/Game run `node server.js`
+/Game/client run `npm start`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

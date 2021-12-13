@@ -1,33 +1,31 @@
 const express = require("express");
+const socketIo = require("socket.io");
 const app = express();
 const http = require("http");
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
 
-app.get("/", (req, res) => {
-  res.sendFile(_dirname + "/index.html");
-});
+const port = process.env.PORT || 4001;
+const index = require("./routes/index");
+app.use(index);
+const server = http.createServer(app);
+const io = socketIo(server);
+
+let interval;
+
 io.on("connection", (socket) => {
-  console.log("a user connected");
-});
-io.on("connection", (socket) => {
-  console.log("a user connected");
+  console.log("New client connected");
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(() => getApiAndEmit(socket), 1000);
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    console.log("Client disconnected");
+    clearInterval(interval);
   });
 });
 
-server.listen(3000, () => {
-  console.log("listening on *:3000");
-});
-const port = process.env.PORT || 50000; //Line 3
-
-// This displays message that the server running and listening to specified port
-app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
-
-// create a GET route
-app.get("/express_backend", (req, res) => {
-  //Line 9
-  res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" }); //Line 10
-}); //Line 11
+const getApiAndEmit = (socket) => {
+  const response = new Date();
+  // Emitting a new message. Will be consumed by the client
+  socket.emit("FromAPI", response);
+};
+server.listen(port, () => console.log(`Listening on port ${port}`));
