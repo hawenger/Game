@@ -15,6 +15,7 @@ const io = socketIo(server, {
   },
 });
 app.use(cors(server));
+
 let interval;
 
 io.on("connection", (socket) => {
