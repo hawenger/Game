@@ -1,19 +1,25 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { React, Switch } from "react";
-import Home from "./Home";
-import Room from "./Room";
+import { React } from "react";
+import { Link } from "react-router-dom";
+
+import "./index.css";
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/room" component={Room} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </Router>
+    <div>
+      <h1>Hello</h1>
+      <nav>
+        <div className="nav-wrapper">
+          <Link className="link agame" id="new" to="/newgame">
+            New Game
+          </Link>
+          <Link className="link agame" id="new" to="/joingame">
+            Join Game
+          </Link>
+          <Link className="link ahome" id="new" to="/">
+            Home
+          </Link>
+        </div>
+      </nav>
+    </div>
   );
-}
-function NotFound() {
-  return <>You have landed on a page that doesn't exist</>;
 }

@@ -125,3 +125,15 @@ button:hover {
   background-color: rgba(243, 97, 12, 100);
   transition: 0.7s;
 }
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#new,
+#join,
+#home {
+}
