@@ -5,7 +5,7 @@ import { getActiveRooms } from "../data";
 export default function JoinGame() {
   let activeRooms = getActiveRooms();
   return (
-    <>
+    <div>
       <nav>
         <div className="nav-wrapper">
           {activeRooms.map((room) => (
@@ -15,6 +15,6 @@ export default function JoinGame() {
           ))}
         </div>
       </nav>
-    </>
+    </div>
   );
 }
