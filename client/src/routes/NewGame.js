@@ -2,8 +2,9 @@ import React from "react";
 
 export default function NewGame() {
   return (
-    <div>
-      <h1>NEW</h1>
-    </div>
+    <main>
+      <h1>YOU:</h1>
+      <div></div>
+    </main>
   );
 }
